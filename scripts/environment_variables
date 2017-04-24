@@ -1,0 +1,9 @@
+PWD=$(pwd)
+
+DOCKER_REGISTRY="docker-registry.gogistics-tw.com"
+
+DOCKER_NAME_GO_SERVER="go-server"
+DOCKER_IMG_VERSION_GO_SERVER="1.0.0"
+
+DOCKER_NAME_KOA_APP="koa-app"
+DOCKER_IMG_VERSION_KOA_APP="1.0.0"
