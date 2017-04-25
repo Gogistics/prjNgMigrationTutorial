@@ -2,6 +2,9 @@
 
 This tutorial simply demos the integration of the existing application with Angular.
 
+
+### Run applications to see how it works
+
 Spin up the docker container to see the existing application:
 
 ```sh
@@ -14,6 +17,22 @@ Spin up the docker container to see the integration of existing application with
 $ ./scripts/spin_up_koa_app.sh -m migration -a koa
 ```
 then open your browser and go to http://192.168.99.100:8081/
+
+
+### Angular Testing
+
+1. Get docker image ready for use
+
+```sh
+$ ./scripts/testing/create_docker_img_for_testing.sh 
+```
+
+2. Run unit testing and generate the coverage report under **ngCliLazyLoading/coverage/**
+
+```sh
+$ ./scripts/testing/do_unit_testing.sh 
+```
+
 
 ---
 
