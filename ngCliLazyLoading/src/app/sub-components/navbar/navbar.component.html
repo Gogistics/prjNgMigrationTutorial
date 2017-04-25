@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Lazy Load</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+      <li><a data-toggle="tab" href="#page1">Page 1</a></li>
+      <li><a data-toggle="tab" href="#page2">Page 2</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <div class="container">
+      <app-content></app-content>
+    </div>
+  </div>
+  <div id="page1" class="tab-pane fade">
+    <div class="container">
+      <h3>Page 1</h3>
+      <p>Some content in menu 1.</p>
+    </div>
+  </div>
+  <div id="page2" class="tab-pane fade">
+    <div class="container">
+      <h3>Page 2</h3>
+    </div>
+  </div>
+</div>
