@@ -33,6 +33,10 @@ $ ./scripts/testing/create_docker_img_for_testing.sh
 $ ./scripts/testing/do_unit_testing.sh 
 ```
 
+3. Run e2e testing
+```sh
+$ ./scripts/testing/do_e2e.sh
+```
 
 ---
 
