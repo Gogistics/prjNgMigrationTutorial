@@ -47,3 +47,7 @@ References:
 [Module vs Module](https://youtu.be/ntJ-P-Cvo7o)
 
 [Docker Docs](https://docs.docker.com/)
+
+[ngrev](https://github.com/mgechev/ngrev)
+
+[Analyzing bundle size with the Angular CLI and Webpack](https://coryrylan.com/blog/analyzing-bundle-size-with-the-angular-cli-and-webpack)

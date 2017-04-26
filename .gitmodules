@@ -1,3 +1,0 @@
-[submodule "sub_modules/ng2_e2e"]
-	path = sub_modules/ng2_e2e
-	url = https://github.com/Gogistics/prjDockerizedAngularE2ETesting.git
