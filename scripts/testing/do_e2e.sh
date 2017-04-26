@@ -38,6 +38,7 @@ do_e2e_testing () {
   local app_image="$IMG_NAME:$IMG_VERSION"
   local commands=(
     "cd /app/ && "
+    "npm install && "
     "ng e2e"
   )
 

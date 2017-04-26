@@ -38,6 +38,7 @@ do_unit_testing () {
   local app_image="$IMG_NAME:$IMG_VERSION"
   local commands=(
     "cd /app/ && "
+    "npm install && "
     "ng test --single-run --code-coverage"
   )
 
