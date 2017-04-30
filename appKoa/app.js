@@ -32,6 +32,11 @@ router.get('/', async function (ctx){
     console.log("success => default path");
 });
 
+router.get('/api', async function (ctx){
+    ctx.body = { resp: 'api testing' };
+    console.log("api => http testing");
+});
+
 app
   .use(router.routes())
   .use(router.allowedMethods());

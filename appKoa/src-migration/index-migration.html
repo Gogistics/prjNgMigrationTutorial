@@ -15,6 +15,7 @@
   <script id="hidden-template" type="text/x-custom-template">
     <div>
       <app-custom-list></app-custom-list>
+      <app-sibling></app-sibling>
     </div>
   </script>
   <app-root>Loading...</app-root>
@@ -43,6 +44,7 @@
       var template = $('#hidden-template').html();
       $('#ng2-elem').append(template);
       migrationHandler.bootstrapNg2Component('listElem');
+      migrationHandler.bootstrapNg2Component('siblingElem');
     }, 3000);
   </script>
 </body>

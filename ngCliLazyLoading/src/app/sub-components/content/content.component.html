@@ -8,7 +8,17 @@
   <div class="tab-content">
     <div id="tab1" class="tab-pane fade in active">
       <h3>Tab 1</h3>
-      <p>Some content.</p>
+      <form class="form-inline">
+        <div class="form-group">
+          <input type="search"
+            class="form-control"
+            placeholder="Enter search string"
+            #search> 
+        </div>
+        <button class="btn btn-primary"
+          (click)="doSearch(search.value)">Search
+        </button>
+      </form>
     </div>
     <div id="tab2" class="tab-pane fade">
       <h3>Tab 2</h3>

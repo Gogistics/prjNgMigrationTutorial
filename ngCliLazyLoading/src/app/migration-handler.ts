@@ -1,11 +1,15 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { CustomListModule } from './sub-components/custom-list/custom-list.module';
+import { SiblingModule } from './sibling/sibling.module';
 
 export class MigrationHandler {
-  // bootstrap module
+  // bootstrap modules
   public bootstrapNg2Component(module: string) {
+    // CustomListModule is declared in app.module.ts
+    // SiblingModule is 
     let moduleDict: any = {
-      listElem: CustomListModule
+      listElem: CustomListModule,
+      siblingElem: SiblingModule
     };
 
     let selectedModule = moduleDict[module];

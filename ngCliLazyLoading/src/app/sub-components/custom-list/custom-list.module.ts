@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CustomListComponent } from './custom-list.component';
 
@@ -9,7 +11,9 @@ import { CustomListComponent } from './custom-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    HttpModule,
+    BrowserAnimationsModule
   ],
   declarations: [ CustomListComponent ],
   bootstrap:    [ CustomListComponent ]

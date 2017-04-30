@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { Animations } from '../../animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import * as Rx from 'rxjs';
+
+let customAnimations = new Animations();
 
 @Component({
+  moduleId: module.id.toString(),
   selector: 'app-custom-list',
   templateUrl: './custom-list.component.html',
-  styleUrls: ['./custom-list.component.css']
+  styleUrls: ['./custom-list.component.css'],
+  animations: [
+    customAnimations.getAnimation('slideInOutAnimation')
+  ],
+  host: { '[@slideInOutAnimation]': '' }
 })
 export class CustomListComponent implements OnInit {
-
-  constructor() { }
+  constructor(private http: Http) {}
 
   ngOnInit() {
+    let resp = this.http.get('/api').map(res => res.json());
+    console.log(resp);
   }
-
 }
