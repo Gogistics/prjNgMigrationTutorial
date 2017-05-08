@@ -17,6 +17,7 @@ source $(pwd)/scripts/environment_variables
 # Returns:
 #   None
 #############################################################
+
 create_img_and_spin_up_go_server() {
   # create docker image
   local docker_img="$1:$2"
@@ -35,7 +36,13 @@ create_img_and_spin_up_go_server() {
 
   if [[ "[]" == "$inspect_result" ]]; then
     echo "container not exists and new one will be created"
-    docker run --name $app_container -p 8080:8080 -d $docker_img
+    docker run \
+      --name $app_container \
+      -v $(pwd)/goServer/static:/web-server/static \
+      -v $(pwd)/goServer/ng:/web-server/ng \
+      -v $(pwd)/goServer/index.html:/web-server/index.html \
+      -p 8082:8082 \
+      -d $docker_img
   fi
 }
 

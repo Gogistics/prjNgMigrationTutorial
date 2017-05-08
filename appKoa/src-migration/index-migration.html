@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Koa Migartion</title>
-  <base href="ng2">
+  <base href="ng">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -20,29 +20,29 @@
   </script>
   <app-root>Loading...</app-root>
   <hr>
-  <div id="ng2-elem"></div>
+  <div id="ng-elem"></div>
 
   <!-- webpackJsonp is defined inside inline.bundle.js -->
-  <script type="text/javascript" src="/ng2/inline.bundle.js"></script>
+  <script type="text/javascript" src="/ng/inline.bundle.js"></script>
 
   <!-- shim for IE -->
-  <script type="text/javascript" src="/ng2/polyfills.bundle.js"></script>
+  <script type="text/javascript" src="/ng/polyfills.bundle.js"></script>
 
   <!-- external JS script defined in .angular-cli.json -->
-  <script type="text/javascript" src="/ng2/scripts.bundle.js"></script>
+  <script type="text/javascript" src="/ng/scripts.bundle.js"></script>
 
   <!-- external CSS styles defined in .angular-cli.json -->
-  <script type="text/javascript" src="/ng2/styles.bundle.js"></script>
+  <script type="text/javascript" src="/ng/styles.bundle.js"></script>
 
   <!-- third-party libs included in vendor.bundle.js -->
-  <script type="text/javascript" src="/ng2/vendor.bundle.js"></script>
+  <script type="text/javascript" src="/ng/vendor.bundle.js"></script>
 
-  <script type="text/javascript" src="/ng2/main.bundle.js"></script>
-  <!-- dynamically append ng2 element into the existing DOM -->
+  <script type="text/javascript" src="/ng/main.bundle.js"></script>
+  <!-- dynamically append ng element into the existing DOM -->
   <script type="text/javascript">
     window.setTimeout(function(){
       var template = $('#hidden-template').html();
-      $('#ng2-elem').append(template);
+      $('#ng-elem').append(template);
       migrationHandler.bootstrapNg2Component('listElem');
       migrationHandler.bootstrapNg2Component('siblingElem');
     }, 3000);

@@ -38,6 +38,14 @@ $ ./scripts/testing/do_unit_testing.sh
 $ ./scripts/testing/do_e2e.sh
 ```
 
+### Analysis
+
+#### ngrev
+...
+
+#### webpack-bundle-analyzer
+...
+
 ---
 
 References:
