@@ -137,7 +137,7 @@ module.exports = __webpack_require__(80);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(30);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Animations; });
 
 var Animations = (function () {
@@ -280,7 +280,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sub_components_navbar_navbar_component__ = __webpack_require__(97);
@@ -351,7 +351,7 @@ var MigrationHandler = (function () {
     function MigrationHandler() {
     }
     // bootstrap modules
-    MigrationHandler.prototype.bootstrapNg2Component = function (module) {
+    MigrationHandler.prototype.bootstrapNgComponent = function (module) {
         // CustomListModule is declared in app.module.ts
         // SiblingModule is 
         var moduleDict = {
@@ -478,7 +478,8 @@ SiblingModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animations__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_animations__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations__ = __webpack_require__(30);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContentComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -491,7 +492,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var customAnimations = new __WEBPACK_IMPORTED_MODULE_1__animations__["a" /* Animations */]();
+
+var customAnimations = new __WEBPACK_IMPORTED_MODULE_1_app_animations__["a" /* Animations */]();
 var ContentComponent = (function () {
     function ContentComponent() {
     }
@@ -506,7 +508,15 @@ ContentComponent = __decorate([
         template: __webpack_require__(164),
         styles: [__webpack_require__(155)],
         animations: [
-            customAnimations.getAnimation('fadeInAnimation')
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["a" /* trigger */])('fadeInAnimation', [
+                // route 'enter' transition
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["b" /* transition */])(':enter', [
+                    // styles at start of transition
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["c" /* style */])({ opacity: 0 }),
+                    // animation and styles at end of transition
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["d" /* animate */])('.3s', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["c" /* style */])({ opacity: 1 }))
+                ]),
+            ])
         ],
         host: { '[@fadeInAnimation]': '' }
     }),
@@ -522,8 +532,8 @@ ContentComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animations__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_animations__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomListComponent; });
@@ -540,7 +550,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var customAnimations = new __WEBPACK_IMPORTED_MODULE_1__animations__["a" /* Animations */]();
+var customAnimations = new __WEBPACK_IMPORTED_MODULE_1_app_animations__["a" /* Animations */]();
 var CustomListComponent = (function () {
     function CustomListComponent(http) {
         this.http = http;
@@ -555,11 +565,7 @@ CustomListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Component */])({
         selector: 'app-custom-list',
         template: __webpack_require__(165),
-        styles: [__webpack_require__(156)],
-        animations: [
-            customAnimations.getAnimation('slideInOutAnimation')
-        ],
-        host: { '[@slideInOutAnimation]': '' }
+        styles: [__webpack_require__(156)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], CustomListComponent);
@@ -577,7 +583,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__custom_list_component__ = __webpack_require__(95);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomListModule; });

@@ -6,8 +6,8 @@ let koa = require('koa'),
     serve = require('koa-static');
 
 let envVars = {
-  indexTemplate: '/app/ng2/index.html',
-  staticFolder: '/app/ng2'
+  indexTemplate: '/app/ng/index.html',
+  staticFolder: '/app/ng'
 }
 
 // set environment variables
@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === 'dev') {
 } else if (process.env.NODE_ENV === 'existing') {
   console.log('Running existing app');
   envVars.indexTemplate = '/koa/index-existing.html';
-  envVars.staticFolder = '/koa';
+  envVars.staticFolder = './koa';
 } else if (process.env.NODE_ENV === 'migration') {
   console.log('Running migration app');
   envVars.indexTemplate = '/koa/index-migration.html';

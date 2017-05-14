@@ -26,13 +26,15 @@ create_img_and_spin_up_koa_app() {
   local app=$4
 
   local app_local_src="ngCliLazyLoading/dist"
-  local app_docker_src="/app/ng2" # default
+  local app_docker_src="/app/ng" # default
 
   if [[ $mode == 'existing' ]]; then
     app_local_src="appKoa/src-existing"
+    app_local_ng_src="ngCliLazyLoading"
     app_docker_src="/app/koa"
+    app_docker_ng_src="/app/koa/ng"
   elif [[ $mode == 'migration' ]]; then
-    cp -r $(pwd)/ngCliLazyLoading/dist/* $(pwd)/appKoa/src-migration/ng2/
+    cp -r $(pwd)/ngCliLazyLoading/dist/* $(pwd)/appKoa/src-migration/ng/
     app_local_src="appKoa/src-migration"
     app_docker_src="/app/koa"
   fi
@@ -65,6 +67,7 @@ create_img_and_spin_up_koa_app() {
   docker run --name $app_container \
     -p 8081:8081 \
     -v $(pwd)/$app_local_src:$app_docker_src \
+    -v $(pwd)/$app_local_ng_src:$app_docker_ng_src \
     -d $docker_img \
     sh -c "${commands[*]}"
 }
