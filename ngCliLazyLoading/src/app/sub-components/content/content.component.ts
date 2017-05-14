@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Animations } from '../../animations';
+import { Animations } from 'app/animations';
+import { trigger, state, animate, transition, style } from '@angular/animations';
+
 let customAnimations = new Animations();
 
 @Component({
@@ -8,7 +10,16 @@ let customAnimations = new Animations();
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css'],
   animations: [
-    customAnimations.getAnimation('fadeInAnimation')
+    trigger('fadeInAnimation', [
+      // route 'enter' transition
+      transition(':enter', [
+        // styles at start of transition
+        style({ opacity: 0 }),
+
+        // animation and styles at end of transition
+        animate('.3s', style({ opacity: 1 }))
+      ]),
+    ])
   ],
   host: { '[@fadeInAnimation]': '' }
 })

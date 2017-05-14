@@ -4,7 +4,7 @@ import { SiblingModule } from './sibling/sibling.module';
 
 export class MigrationHandler {
   // bootstrap modules
-  public bootstrapNg2Component(module: string) {
+  public bootstrapNgComponent(module: string) {
     // CustomListModule is declared in app.module.ts
     // SiblingModule is 
     let moduleDict: any = {
