@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CustomListComponent } from './custom-list.component';
 
@@ -12,8 +11,7 @@ import { CustomListComponent } from './custom-list.component';
     BrowserModule,
     FormsModule,
     CommonModule,
-    HttpModule,
-    BrowserAnimationsModule
+    HttpModule
   ],
   declarations: [ CustomListComponent ],
   bootstrap:    [ CustomListComponent ]

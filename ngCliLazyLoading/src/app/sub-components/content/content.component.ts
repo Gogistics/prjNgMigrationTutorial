@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Animations } from 'app/animations';
-import { trigger, state, animate, transition, style } from '@angular/animations';
-
+import { Animations } from '../../../app/animations';
 let customAnimations = new Animations();
+
+import { trigger, state, animate, transition, style } from '@angular/animations';
 
 @Component({
   moduleId: module.id.toString(),

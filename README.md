@@ -5,19 +5,31 @@ This tutorial simply demos the integration of the existing application with Angu
 
 ### Run applications to see how it works
 
-Spin up the docker container to see the existing application:
+* Spin up the docker container to run the existing application with Angular (SystemJS as module loader):
 
 ```sh
 $ ./scripts/spin_up_koa_app.sh -m existing -a koa
 ```
 then open your browser and go to http://192.168.99.100:8081/
 
-Spin up the docker container to see the integration of existing application with Angular:
+Transpile files after updating Angular stuff
+```sh
+$ cd ngCliLazyLoading/
+$ tsc -p src/
+```
+
+* Spin up the docker container to run the application with Angular (AOT):
 ```sh
 $ ./scripts/spin_up_koa_app.sh -m migration -a koa
 ```
 then open your browser and go to http://192.168.99.100:8081/
 
+Rebuild Angular stuff
+```sh
+$ cd ngCliLazyLoading/
+$ ng build --prod --aot --deploy-url /ng/ # for AOT in production mode
+$ ng build --deploy-url /ng/ # for development mode
+```
 
 ### Angular Testing
 
