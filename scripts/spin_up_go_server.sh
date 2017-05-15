@@ -17,6 +17,9 @@ source $(pwd)/scripts/environment_variables
 # Returns:
 #   None
 #############################################################
+# text styles
+bold=$(tput bold)
+normal=$(tput sgr0)
 
 create_img_and_spin_up_go_server() {
   # create docker image
@@ -43,6 +46,10 @@ create_img_and_spin_up_go_server() {
       -v $(pwd)/goServer/index.html:/web-server/index.html \
       -p 8082:8082 \
       -d $docker_img
+  else
+    echo "container already exists!"
+    echo "to spin up a new one, remove the old one first and run ${bold}./scripts/spin_up_go_server.sh${normal} command again"
+    echo "otherwise ${bold}docker restart <container-name>${normal} or ${bold}docker restart <container-id>${normal}"
   fi
 }
 
