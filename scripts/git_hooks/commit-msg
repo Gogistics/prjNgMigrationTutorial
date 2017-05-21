@@ -1,0 +1,32 @@
+#!/bin/bash
+# Program: commit spellchecker
+# Author: Alan Tai
+# Date: 12/27/2016
+
+# set aspell path
+aspell_path="/usr/local/bin/aspell"
+
+# set text styles
+bold=$(tput bold)
+normal=$(tput sgr0)
+underline=$(tput smul)
+
+# multiple highlight features
+bldred=${bold}$(tput setaf 1)
+
+errors=$($aspell_path list < "$1")
+if [ -n "$errors" ]; then
+  echo $'\n'
+
+  # print out spelling errors
+  echo "<-- ${underline}Commit Spellchecker${normal} -->" >&2
+  echo "There are some possible spelling errors found in the commit message as follows:" >&2
+  echo "${bldred}$errors${normal}" >&2
+  echo $'\n'
+
+  # print out suggested solutions
+  echo "<-- ${underline}Suggested Solutions${normal} -->"
+  echo "1. Please use ${bold}git commit --amend${normal} to verify that your commit message is correct."
+  echo "2. Or use ${bold}git reset --soft HEAD@{1}${normal} to reset your last commit."
+  echo $'\n'
+fi

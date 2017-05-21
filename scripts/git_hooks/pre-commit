@@ -1,0 +1,41 @@
+#!/bin/bash
+# Program: pre-commit filter
+# Author: Alan Tai
+# Date: 12/27/2016
+
+# check whether there exist untracked files
+submodule_status=`git log origin/master..HEAD --pretty=oneline --name-only`
+[[ "$submodule_status" =~ "ui/node_modules/" ]] && echo matched
+# echo $submodule_status
+
+# Allows to read the input below, assigns stdin to keyboard
+exec < /dev/tty
+
+# check whether developer is on master branch
+branch=$(git rev-parse --abbrev-ref HEAD | grep -e 'master')
+
+if [ $? -eq 0 ]; then
+  echo "WARNING! You should not be working on the master branch."
+  echo "Are you sure you want to continue? [Y/N]"
+  read confirmation
+  if [ "$confirmation" == "y" ] || [ "$confirmation" == "Y" ]
+  then exit 0;
+  else echo "Exit!"; exit 1;
+  fi
+fi
+
+# check whether there exist conflicts
+conflicts=`git diff --cached --name-only -S '<<<<<< HEAD'`
+if [ -n "$conflicts" ]; then
+  echo "COMMIT REJECTED! You have merge conflicts in the following file(s):" >&2
+  echo "$conflicts" >&2
+  exit 1
+fi
+
+# check whether there exist stashed conflicts
+stashed=`git diff --cached --name-only -S '<<<<<< Updated upstream'`
+if [ -n "$stashed" ]; then
+  echo "COMMIT REJECTED! You have stashed conflicts in the following file(s):" >&2
+  echo "$stashed" >&2
+  exit 1
+fi
