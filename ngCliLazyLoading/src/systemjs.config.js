@@ -11,9 +11,6 @@
     },
     // map tells the System loader where to look for things
     map: {
-      // our app is within the app folder
-      'app': 'app',
-
       // angular bundles
       '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
       '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
@@ -30,24 +27,13 @@
       '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
       '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
       'bootstrap': 'npm:@bootstrap/dist/js/bootstrap.min.js',
-
-      // other libraries
-      'rxjs':                      'npm:rxjs',
+      'rxjs': 'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       '/ng/src': {
         defaultExtension: 'js'
-      },
-      app: {
-        main: '/ng/src/main.js',
-        defaultExtension: 'js',
-        meta: {
-          './*.js': {
-            loader: '/ng/src/systemjs-angular-loader.js'
-          }
-        }
       },
       rxjs: {
         defaultExtension: 'js'
