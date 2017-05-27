@@ -64,10 +64,12 @@ create_img_and_spin_up_koa_app() {
       "cd /app/ && "
       "NODE_ENV=$mode node app.js --harmony-async-await"
     )
+
+  # for JIT
+  # -v $(pwd)/$app_local_ng_src:$app_docker_ng_src \
   docker run --name $app_container \
     -p 8081:8081 \
     -v $(pwd)/$app_local_src:$app_docker_src \
-    -v $(pwd)/$app_local_ng_src:$app_docker_ng_src \
     -d $docker_img \
     sh -c "${commands[*]}"
 }
