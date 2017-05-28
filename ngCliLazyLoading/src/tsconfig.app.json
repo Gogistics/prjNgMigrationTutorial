@@ -6,6 +6,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+    "allowJs": true,
     "lib": [
       "es2016",
       "dom"
