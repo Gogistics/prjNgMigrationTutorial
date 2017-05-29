@@ -43,6 +43,8 @@ create_img_and_spin_up_go_server() {
 
   if [[ "[]" == "$inspect_result" ]]; then
     echo "container not exists and new one will be created"
+    [[ ! -d $(pwd)/goServer/ng ]] && mkdir -p $(pwd)/goServer/ng
+    
     cp -r $(pwd)/ngCliLazyLoading/dist/* $(pwd)/goServer/ng/
 
     docker run \

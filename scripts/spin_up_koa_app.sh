@@ -26,15 +26,20 @@ create_img_and_spin_up_koa_app() {
   local app=$4
 
   local app_local_src="ngCliLazyLoading/dist"
+  local app_local_ng_src="ngCliLazyLoading"
   local app_docker_src="/app/ng" # default
+  local app_docker_ng_src="/app/koa/ng"
 
   if [[ $mode == 'existing' ]]; then
     app_local_src="appKoa/src-existing"
     app_local_ng_src="ngCliLazyLoading"
     app_docker_src="/app/koa"
     app_docker_ng_src="/app/koa/ng"
+
   elif [[ $mode == 'migration' ]]; then
+    [[ ! -d $(pwd)/appKoa/src-migration/ng ]] && mkdir -p $(pwd)/appKoa/src-migration/ng
     cp -r $(pwd)/ngCliLazyLoading/dist/* $(pwd)/appKoa/src-migration/ng/
+
     app_local_src="appKoa/src-migration"
     app_docker_src="/app/koa"
   fi
@@ -61,9 +66,9 @@ create_img_and_spin_up_koa_app() {
     docker rm -f $app_container
   fi
   commands=(
-      "cd /app/ && "
-      "NODE_ENV=$mode node app.js --harmony-async-await"
-    )
+    "cd /app/ && "
+    "NODE_ENV=$mode node app.js --harmony-async-await"
+  )
 
   # for JIT
   # -v $(pwd)/$app_local_ng_src:$app_docker_ng_src \
