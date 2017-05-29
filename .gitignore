@@ -1,4 +1,6 @@
 /sub_modules
+/appKoa/src-migration/ng
+/goServer/ng
 /ngCliLazyLoading/coverage
 /rollupLazyingLoading
 /jitDemo

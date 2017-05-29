@@ -10,5 +10,3 @@ ADD ./goServer/web_server.go /web-server/
 RUN cd /web-server/ && go build web_server.go
 
 WORKDIR /web-server/
-
-CMD ./web_server

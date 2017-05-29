@@ -36,16 +36,23 @@ create_img_and_spin_up_go_server() {
 
   local app_container="$1"
   local inspect_result=$(docker inspect $app_container)
+  local commands=(
+    "cd /web-server && "
+    "./web_server"
+  )
 
   if [[ "[]" == "$inspect_result" ]]; then
     echo "container not exists and new one will be created"
+    cp -r $(pwd)/ngCliLazyLoading/dist/* $(pwd)/goServer/ng/
+
     docker run \
       --name $app_container \
       -v $(pwd)/goServer/static:/web-server/static \
       -v $(pwd)/goServer/ng:/web-server/ng \
       -v $(pwd)/goServer/index.html:/web-server/index.html \
       -p 8082:8082 \
-      -d $docker_img
+      -d $docker_img \
+      sh -c "${commands[*]}"
   else
     echo "container already exists!"
     echo "to spin up a new one, remove the old one first and run ${bold}./scripts/spin_up_go_server.sh${normal} command again"
