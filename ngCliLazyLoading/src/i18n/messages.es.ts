@@ -1,5 +1,5 @@
-export const TRANSLATION = `
-<?xml version='1.0' encoding='utf-8'?>
+export const TRANSLATION_ES = 
+`<?xml version='1.0' encoding='utf-8'?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
@@ -49,5 +49,4 @@ export const TRANSLATION = `
      </trans-unit>
    </body>
  </file>
-</xliff>
-`;
+</xliff>`;
