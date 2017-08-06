@@ -2,7 +2,7 @@ PWD=$(pwd)
 DEBIAN_DESTRIBUTION="stretch"
 
 # general env. variables
-NG_CLI_VERSION="1.1.1"
+NG_CLI_VERSION="1.3.0-rc.5"
 USER_HOME_DIR="/app/"
 NPM_CONFIG_LOGLEVEL="warn"
 LANG="C.UTF-8"
@@ -10,10 +10,8 @@ LANG="C.UTF-8"
 # env. variables reladted to java
 JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 JAVA_VERSION="8u131"
-# JAVA_DEBIAN_VERSION="8u131-b11-1~bpo8+1" # jessie
-JAVA_DEBIAN_VERSION="8u131-b11-2"
-# CA_CERTIFICATES_JAVA_VERSION="20161107~bpo8+1" # jessie
-CA_CERTIFICATES_JAVA_VERSION="20170531"
+JAVA_DEBIAN_VERSION="8u131-b11-1~bpo8+1"
+CA_CERTIFICATES_JAVA_VERSION="20161107~bpo8+1"
 
 # env. variables of docker img & container
 IMG_REGISTRY="gogistics"
@@ -29,4 +27,3 @@ DOCKER_IMG_VERSION_GO_SERVER="1.0.0"
 
 DOCKER_NAME_KOA_APP="koa-app"
 DOCKER_IMG_VERSION_KOA_APP="1.0.0"
-
