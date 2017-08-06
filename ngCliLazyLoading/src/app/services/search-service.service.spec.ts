@@ -1,11 +1,21 @@
 import { TestBed, inject } from '@angular/core/testing';
-
+import {
+  Http,
+  HttpModule,
+  XHRBackend,
+  ResponseOptions,
+  Response,
+  RequestMethod,
+  BaseRequestOptions,
+  ResponseType
+} from '@angular/http';
 import { SearchServiceService } from './search-service.service';
 
 describe('SearchServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SearchServiceService]
+      imports: [ HttpModule ],
+      providers: [ SearchServiceService ]
     });
   });
 

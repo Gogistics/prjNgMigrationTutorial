@@ -1,5 +1,5 @@
 # Grep base image of Debian Jessie
-FROM  debian:jessie
+FROM  debian:stretch
 
 # maintainer
 MAINTAINER  Alan Tai <alan.tai@riverbed.com>
@@ -14,7 +14,7 @@ ADD ./scripts/environment_variables /app/
 RUN set -a && . /app/environment_variables && \
     apt-get update && \
     set -xe && \
-    apt-get -y install apt-utils curl nano git sudo build-essential chromium xvfb bzip2 unzip xz-utils && \
+    apt-get -y install apt-utils curl nano git sudo build-essential chromium libxt-dev xvfb bzip2 unzip xz-utils && \
     chmod +x /usr/bin/dumb-init && \
     curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash - && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs && \

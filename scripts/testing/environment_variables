@@ -8,12 +8,12 @@ LANG="C.UTF-8"
 
 # env. variables reladted to java
 JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-JAVA_VERSION="8u121"
-JAVA_DEBIAN_VERSION="8u121-b13-1~bpo8+1"
+JAVA_VERSION="8u131"
+JAVA_DEBIAN_VERSION="8u131-b11-1~bpo8+1"
 CA_CERTIFICATES_JAVA_VERSION="20161107~bpo8+1"
 
 # env. variables of docker img & container
 IMG_REGISTRY="gogistics"
-IMG_NAME="ng2-testing"
+IMG_NAME="e2e-testing"
 IMG_VERSION="1.0.0"
 CONTAINER_NAME="testing"

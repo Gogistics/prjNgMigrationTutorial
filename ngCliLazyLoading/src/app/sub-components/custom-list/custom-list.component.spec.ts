@@ -1,5 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {
+  Http,
+  HttpModule,
+  XHRBackend,
+  ResponseOptions,
+  Response,
+  RequestMethod,
+  BaseRequestOptions,
+  ResponseType
+} from '@angular/http';
+import { FormsModule } from '@angular/forms';
 import { CustomListComponent } from './custom-list.component';
 
 describe('CustomListComponent', () => {
@@ -8,6 +18,7 @@ describe('CustomListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ HttpModule, FormsModule ],
       declarations: [ CustomListComponent ]
     })
     .compileComponents();
