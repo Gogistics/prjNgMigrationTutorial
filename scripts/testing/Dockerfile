@@ -1,5 +1,5 @@
 # Grep base image of Debian Jessie
-FROM  debian:stretch
+FROM  node:6
 
 # maintainer
 MAINTAINER  Alan Tai <alan.tai@riverbed.com>
